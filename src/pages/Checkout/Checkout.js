@@ -24,7 +24,9 @@ const Checkout = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    toast.success("Your order is placed successfully", { duration: 1800 });
+    toast.success("Thank You! Your order is placed successfully", {
+      duration: 1800,
+    });
     event.target.reset();
     navigate("/");
   };
