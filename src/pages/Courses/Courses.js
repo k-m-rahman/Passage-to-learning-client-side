@@ -10,7 +10,7 @@ const Courses = () => {
       <h2 className="text-3xl font-semibold my-5 underline w-max mx-auto">
         We have total {courses.length} courses
       </h2>
-      <div className="grid grid-cols-8 my-10">
+      <div className="grid grid-cols-8 my-10 gap-5">
         <div className="col-span-2  border  shadow-xl rounded">
           <div className="p-3 flex flex-col gap-3 sticky top-14">
             {courses.map((course) => (
