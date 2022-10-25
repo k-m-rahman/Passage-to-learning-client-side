@@ -5,7 +5,7 @@ import { FaFileDownload, FaArrowRight } from "react-icons/fa";
 
 const CourseDetails = () => {
   const course = useLoaderData();
-  const { description, name, lessons, picture } = course;
+  const { description, name, lessons, picture, _id } = course;
   console.log(course);
   return (
     <div className="w-10/12 mx-auto my-10">
@@ -41,7 +41,7 @@ const CourseDetails = () => {
         </div>
       </Card>
       <div className="mt-4 text-center">
-        <Link to="/checkout">
+        <Link to={`/checkout/${_id}`}>
           <Button className="mx-auto" gradientMonochrome="purple">
             <span>Get Premium Access</span>{" "}
             <span className="ml-3">

@@ -29,7 +29,7 @@ const NavBar = () => {
             className=" h-10 mr-2  bg-emerald-100 border rounded-lg"
             alt="passage to learning logo"
           />
-          <span className="self-center whitespace-nowrap text-xl md:text-2xl font-semibold dark:text-white">
+          <span className="self-center whitespace-nowrap text-xl md:text-2xl font-bold dark:text-white">
             Passage To Learning
           </span>
         </NavLink>
