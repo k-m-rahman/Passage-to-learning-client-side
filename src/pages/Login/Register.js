@@ -1,13 +1,17 @@
 import { Button, Label, TextInput } from "flowbite-react";
 import React, { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 
 const Register = () => {
   const [error, setError] = useState("");
-  const { signUp, updateUserProfile, verifyEmail } = useContext(AuthContext);
+  const { signUp, updateUserProfile, verifyEmail, setLoading } =
+    useContext(AuthContext);
 
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -30,11 +34,14 @@ const Register = () => {
         const user = result.user;
         form.reset();
         setError("");
-        navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         setError(error.message);
         console.error(error);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
   return (
