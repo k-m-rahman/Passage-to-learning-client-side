@@ -4,6 +4,7 @@ import Blogs from "../pages/Blogs/Blogs";
 import Courses from "../pages/Courses/Courses";
 import FAQ from "../pages/FAQ/FAQ";
 import Home from "../pages/Home/Home";
+import Login from "../pages/Login/Login";
 import Profile from "../pages/Profile/Profile";
 
 export const router = createBrowserRouter([
@@ -30,6 +31,10 @@ export const router = createBrowserRouter([
       {
         path: "/profile",
         element: <Profile></Profile>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
       },
     ],
   },

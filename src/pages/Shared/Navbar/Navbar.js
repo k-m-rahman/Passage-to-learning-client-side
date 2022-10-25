@@ -1,10 +1,14 @@
 import { Avatar, Dropdown, Navbar, ToggleSwitch } from "flowbite-react";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../assets/logo.png";
+import { AuthContext } from "../../../contexts/AuthProvider";
 
 const NavBar = () => {
+  const { user } = useContext(AuthContext);
+  console.log(user);
   const [theme, setTheme] = useState(false);
+
   const themeChanger = () => {
     setTheme(!theme);
     console.log("hello");
