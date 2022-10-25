@@ -72,7 +72,12 @@ const NavBar = () => {
                 arrowIcon={false}
                 inline={true}
                 label={
-                  <Avatar alt="User " img={user?.photoURL} rounded={true} />
+                  <Avatar
+                    className="border border-gray-300  rounded-full"
+                    alt="User "
+                    img={user?.photoURL}
+                    rounded={true}
+                  />
                 }
               >
                 <Dropdown.Header>
