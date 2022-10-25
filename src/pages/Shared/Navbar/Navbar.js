@@ -3,13 +3,11 @@ import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../assets/logo.png";
 import { AuthContext } from "../../../contexts/AuthProvider";
-import { FaUserCircle } from "react-icons/fa";
 
 const NavBar = () => {
   const { user, logout } = useContext(AuthContext);
   const [theme, setTheme] = useState(false);
 
-  console.log(user);
   const themeChanger = () => {
     setTheme(!theme);
   };
@@ -74,17 +72,7 @@ const NavBar = () => {
                 arrowIcon={false}
                 inline={true}
                 label={
-                  <Avatar
-                    alt="User settings"
-                    img={
-                      user.photoURL ? (
-                        user?.photoURL
-                      ) : (
-                        <FaUserCircle></FaUserCircle>
-                      )
-                    }
-                    rounded={true}
-                  />
+                  <Avatar alt="User " img={user?.photoURL} rounded={true} />
                 }
               >
                 <Dropdown.Header>

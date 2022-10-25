@@ -1,12 +1,12 @@
 import { Button, Label, TextInput } from "flowbite-react";
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import { AuthContext } from "../../contexts/AuthProvider";
 
 const Login = () => {
-  const { providerLogin } = useContext(AuthContext);
+  const { providerLogin, login } = useContext(AuthContext);
 
   const [error, setError] = useState("");
 
@@ -14,11 +14,14 @@ const Login = () => {
 
   const gitHubProvider = new GithubAuthProvider();
 
+  const navigate = useNavigate();
+
   const handleGoogleSignIn = () => {
     providerLogin(googleProvider)
       .then((result) => {
         const user = result.user;
         console.log(user);
+        navigate("/");
       })
       .catch((error) => {
         console.error(error);
@@ -31,6 +34,25 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.error(error);
+        setError(error.message);
+      });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    login(email, password)
+      .then((result) => {
+        const user = result.user;
+        form.reset();
+        setError("");
+        navigate("/");
       })
       .catch((error) => {
         console.error(error);
@@ -43,7 +65,10 @@ const Login = () => {
       <div>
         <h3 className="text-3xl font-semibold mb-4">Login</h3>
       </div>
-      <form className="flex flex-col gap-4 text-left w-10/12 mx-auto">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col gap-4 text-left w-10/12 mx-auto"
+      >
         <div>
           <div className="mb-2 block">
             <Label htmlFor="email2" value="Email" />
@@ -51,6 +76,7 @@ const Login = () => {
           <TextInput
             id="email2"
             type="email"
+            name="email"
             placeholder="Your Email"
             required={true}
             shadow={true}
@@ -63,12 +89,13 @@ const Login = () => {
           <TextInput
             id="password2"
             type="password"
+            name="password"
             placeholder="Your Password"
             required={true}
             shadow={true}
           />
         </div>
-
+        {error && <p className="text-red-500 text-sm">{error}</p>}
         <div className="flex items-center gap-2">
           <Label>
             Don't have any account?{" "}
@@ -109,8 +136,6 @@ const Login = () => {
           <span>Github Sign In</span>
         </button>
       </div>
-
-      {error && <p className="text-red-500">{error}</p>}
     </div>
   );
 };
