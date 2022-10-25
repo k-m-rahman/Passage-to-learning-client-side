@@ -51,9 +51,10 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
       console.log("Auth state changed :", currentUser);
-      if (currentUser === null || currentUser.emailVerified) {
-        setUser(currentUser);
-      }
+      //   if (currentUser === null || currentUser.emailVerified) {
+      //     setUser(currentUser);
+      //   }
+      setUser(currentUser);
 
       setLoading(false);
     });
