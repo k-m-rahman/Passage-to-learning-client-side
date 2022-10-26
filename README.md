@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# **Passage To Learning (Client Side)**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### **_This project was built with -_**
 
-## Available Scripts
+- **React**
+- **React Router**
+- **Tailwind CSS**
+- **Component Library: Flowbite React**
 
-In the project directory, you can run:
+<br>
 
-### `npm start`
+## **Firebase Live Site Link :** [Passage To Learning](https://passage-to-learning.web.app/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## **Server Side Repository :** [Passage To Learning Server Side](https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-k-m-rahman)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<br>
 
-### `npm test`
+## **API**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Server -> https://passage-to-learning-server.vercel.app/
 
-### `npm run build`
+All Courses -> https://passage-to-learning-server.vercel.app/courses
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Single Course -> https://passage-to-learning-server.vercel.app/courses/course_id
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Example -> https://passage-to-learning-server.vercel.app/courses/63349086a02270e076e295e7
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<br>
 
-### `npm run eject`
+<br>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## **Description**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- a teaching platform to make skilled web developer
+- project based courses are taught by very experience instructors
+- you can create your profile on our website
+- you can get premium access of any course after signing in to our website
+- you can update your profile name and picture
+- the site is moderately interactive and have some cool toasts and alert
+- there are some FAQ and blogs in our site, feel free to browse them
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<br>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## **Resource & Credits:**
 
-## Learn More
+1.Tailwind Component -> [Flowbite-react](https://flowbite-react.com/)
+<br>
+2.Icon -> [React Icons](https://react-icons.github.io/react-icons/)
+<br>
+3.Animation -> [LottieFiles](https://lottiefiles.com/)
+<br>
+4.Toast -> [React Hot Toast](https://react-hot-toast.com/)
+<br>
+5.Alert -> [Sweet Alert](https://sweetalert.js.org/)
+<br>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<br>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# **To Run The Project**
 
-### Code Splitting
+- ### **Clone the project**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- ### **npm install**
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- ### **npm start**
