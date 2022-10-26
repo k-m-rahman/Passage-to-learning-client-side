@@ -1,6 +1,6 @@
 import { Avatar, Dropdown, Navbar, ToggleSwitch } from "flowbite-react";
 import React, { useContext, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, ScrollRestoration } from "react-router-dom";
 import logo from "../../../assets/logo.png";
 import { AuthContext } from "../../../contexts/AuthProvider";
 import toast from "react-hot-toast";
@@ -38,6 +38,7 @@ const NavBar = () => {
         </NavLink>
         <Navbar.Toggle />
         <Navbar.Collapse>
+          <ScrollRestoration></ScrollRestoration>
           <NavLink
             className={({ isActive }) =>
               !isActive

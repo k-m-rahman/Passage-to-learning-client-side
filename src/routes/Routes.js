@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main";
+import BlogDetails from "../pages/Blogs/BlogDetails/BlogDetails";
 import Blogs from "../pages/Blogs/Blogs";
 import Checkout from "../pages/Checkout/Checkout";
 import CourseDetails from "../pages/Courses/CourseDetails/CourseDetails";
@@ -42,6 +43,18 @@ export const router = createBrowserRouter([
       {
         path: "/blogs",
         element: <Blogs></Blogs>,
+        loader: () =>
+          fetch(
+            "https://passage-to-learning-server-k-m-rahman.vercel.app/blogs"
+          ),
+      },
+      {
+        path: "/blogs/:id",
+        element: <BlogDetails></BlogDetails>,
+        loader: ({ params }) =>
+          fetch(
+            `https://passage-to-learning-server-k-m-rahman.vercel.app/blogs/${params.id}`
+          ),
       },
       {
         path: "/faq",
