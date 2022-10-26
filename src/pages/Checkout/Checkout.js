@@ -56,7 +56,7 @@ const Checkout = () => {
               id="email"
               type="text"
               required={true}
-              value={user?.displayName}
+              defaultValue={user?.displayName}
             />
           </div>
           <div>
@@ -68,7 +68,7 @@ const Checkout = () => {
               type="email"
               placeholder="name@flowbite.com"
               required={true}
-              value={user?.email}
+              defaultValue={user?.email}
             />
           </div>
           <div>

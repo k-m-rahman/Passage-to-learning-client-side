@@ -1,5 +1,6 @@
 import { Button } from "flowbite-react";
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 
 const Profile = () => {
@@ -33,9 +34,11 @@ const Profile = () => {
           </div>
         </div>
         <div className="mt-5">
-          <Button className="mx-auto" gradientDuoTone="purpleToBlue">
-            Edit Profile
-          </Button>
+          <Link to={`/updateProfile`}>
+            <Button className="mx-auto" gradientDuoTone="purpleToBlue">
+              Edit Profile
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
