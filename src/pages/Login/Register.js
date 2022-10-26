@@ -3,6 +3,8 @@ import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 
+import swal from "sweetalert";
+
 const Register = () => {
   const [error, setError] = useState("");
   const { signUp, updateUserProfile, verifyEmail, setLoading } =
@@ -20,6 +22,8 @@ const Register = () => {
     const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
+
+    // validating password
     if (password.length < 6) {
       setError("Password must be at least 6 characters");
       return;
@@ -29,12 +33,20 @@ const Register = () => {
       return;
     }
 
+    // registration
     signUp(email, password)
       .then((result) => {
         const user = result.user;
         form.reset();
         setError("");
+        handleEmailVerification();
+        handleProfileUpdate(name, photo);
         navigate(from, { replace: true });
+        swal(
+          "User Created successfully!",
+          "Please verify your email!",
+          "success"
+        );
       })
       .catch((error) => {
         setError(error.message);
@@ -44,6 +56,27 @@ const Register = () => {
         setLoading(false);
       });
   };
+
+  // email verification
+  const handleEmailVerification = () => {
+    verifyEmail();
+  };
+
+  // updating user name and photo
+
+  const handleProfileUpdate = (name, photo) => {
+    const profile = {
+      displayName: name,
+      photoURL: photo,
+    };
+
+    updateUserProfile(profile)
+      .then(() => {
+        console.log("User name and photo updated");
+      })
+      .catch((error) => console.error(error));
+  };
+
   return (
     <div className="mx-5 md:w-1/2 md:mx-auto mt-10 border p-5 pb-10 rounded-lg shadow-xl mb-10">
       <div>

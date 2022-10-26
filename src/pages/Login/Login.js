@@ -4,12 +4,15 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import { AuthContext } from "../../contexts/AuthProvider";
+import toast from "react-hot-toast";
 
 const Login = () => {
-  const { providerLogin, login, setLoading } = useContext(AuthContext);
+  const { providerLogin, login, setLoading, resetPassword } =
+    useContext(AuthContext);
 
   const [error, setError] = useState("");
 
+  const [userEmail, setUserEmail] = useState(null);
   const googleProvider = new GoogleAuthProvider();
 
   const gitHubProvider = new GithubAuthProvider();
@@ -24,6 +27,8 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        setError("");
+        toast.success("Logged in successfully!", { duration: 2000 });
         navigate(from, { replace: true });
       })
       .catch((error) => {
@@ -40,6 +45,8 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        setError("");
+        toast.success("Logged in successfully!", { duration: 2000 });
         navigate(from, { replace: true });
       })
       .catch((error) => {
@@ -61,6 +68,7 @@ const Login = () => {
         const user = result.user;
         form.reset();
         setError("");
+        toast.success("Logged in successfully!", { duration: 2000 });
         navigate(from, { replace: true });
       })
       .catch((error) => {
@@ -70,6 +78,28 @@ const Login = () => {
       .finally(() => {
         setLoading(false);
       });
+  };
+
+  const handleEmailBlur = (event) => {
+    const email = event.target.value;
+    setUserEmail(email);
+  };
+
+  const handleResetPassword = () => {
+    if (userEmail) {
+      resetPassword(userEmail)
+        .then(() => {
+          toast.success(
+            "Password reset email has been sent. Please, check your email!",
+            { duration: 2000 }
+          );
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    } else {
+      toast("Please provide your email!");
+    }
   };
 
   return (
@@ -86,6 +116,7 @@ const Login = () => {
             <Label htmlFor="email2" value="Email" />
           </div>
           <TextInput
+            onBlur={handleEmailBlur}
             id="email2"
             type="email"
             name="email"
@@ -123,12 +154,13 @@ const Login = () => {
 
         <div className="flex items-center gap-2">
           <Label>
-            <Link
-              to="/register"
-              className="text-blue-600 hover:underline dark:text-blue-500"
+            Forgot Password?
+            <span
+              onClick={handleResetPassword}
+              className="text-blue-600 hover:underline ml-2 dark:text-blue-500"
             >
-              Forgot Password?
-            </Link>
+              Reset Password
+            </span>
           </Label>
         </div>
       </form>

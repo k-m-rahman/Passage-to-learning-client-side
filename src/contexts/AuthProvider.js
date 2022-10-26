@@ -4,6 +4,7 @@ import {
   getAuth,
   onAuthStateChanged,
   sendEmailVerification,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -48,6 +49,10 @@ const AuthProvider = ({ children }) => {
     return sendEmailVerification(auth.currentUser);
   };
 
+  const resetPassword = (email) => {
+    return sendPasswordResetEmail(auth, email);
+  };
+
   useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
       console.log("Auth state changed :", currentUser);
@@ -71,6 +76,7 @@ const AuthProvider = ({ children }) => {
     updateUserProfile,
     verifyEmail,
     setLoading,
+    resetPassword,
   };
 
   return (

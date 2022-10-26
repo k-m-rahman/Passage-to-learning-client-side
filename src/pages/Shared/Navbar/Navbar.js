@@ -3,6 +3,7 @@ import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../assets/logo.png";
 import { AuthContext } from "../../../contexts/AuthProvider";
+import toast from "react-hot-toast";
 
 const NavBar = () => {
   const { user, logout } = useContext(AuthContext);
@@ -14,7 +15,9 @@ const NavBar = () => {
 
   const handleLogout = () => {
     logout()
-      .then(() => {})
+      .then(() => {
+        toast.error("Logged Out!");
+      })
       .catch((error) => {
         console.error(error);
       });
