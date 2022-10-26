@@ -5,7 +5,7 @@ import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 
 const CommonFooter = () => {
   return (
-    <Footer className="bg-slate-900 border-2 mt-24 mb-0 " container={true}>
+    <div className="bg-slate-900 border-2 mt-24 mb-0 p-5 rounded-md">
       <div className="w-full text-center">
         <div className="w-full justify-between  sm:flex sm:items-center sm:justify-between">
           <div className="flex items-center justify-center gap-2 text-xl lg:text-3xl font-semibold mb-3 lg:mb-0">
@@ -47,7 +47,7 @@ const CommonFooter = () => {
           year={2022}
         />
       </div>
-    </Footer>
+    </div>
   );
 };
 

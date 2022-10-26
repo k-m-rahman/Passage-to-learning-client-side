@@ -1,14 +1,20 @@
 import { Button, Card } from "flowbite-react";
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { FaFileDownload, FaArrowRight } from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const CourseDetails = () => {
   const course = useLoaderData();
   const { description, name, lessons, picture, _id } = course;
   console.log(course);
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
-    <div className="w-10/12 mx-auto my-10">
+    <div className="w-10/12 mx-auto my-10" data-aos="zoom-in">
       <Card>
         <img
           className="h-[300px] border border-gray-300 rounded-lg"

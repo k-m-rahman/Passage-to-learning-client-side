@@ -1,0 +1,9 @@
+.oops{
+    background-image: url("/src/assets/galaxy.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    
+}

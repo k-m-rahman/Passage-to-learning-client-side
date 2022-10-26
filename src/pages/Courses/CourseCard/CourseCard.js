@@ -1,12 +1,19 @@
 import { Card } from "flowbite-react";
-import React from "react";
+import React, { useEffect } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const CourseCard = ({ course }) => {
   const { name, picture, description, _id } = course;
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
-    <div className="max-w-sm mx-auto">
+    <div className="max-w-sm mx-auto" data-aos="flip-left">
       <Card>
         <img
           className="rounded-lg h-[180px] border border-gray-300"

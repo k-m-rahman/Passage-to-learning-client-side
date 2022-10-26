@@ -70,13 +70,13 @@ const NavBar = () => {
           </NavLink>
 
           {user ? (
-            <span className=" flex justify-center">
+            <span className=" flex justify-center ">
               <Dropdown
                 arrowIcon={false}
                 inline={true}
                 label={
                   <Avatar
-                    className="border border-gray-300  rounded-full"
+                    className="border border-gray-300  rounded-full sm:hover:scale-110"
                     alt="User "
                     img={user?.photoURL}
                     rounded={true}
@@ -115,7 +115,7 @@ const NavBar = () => {
           <ToggleSwitch
             className="mx-auto mt-5 md:mt-2 "
             checked={theme}
-            label="Dark Mode"
+            label={!theme ? "Dark" : "Light"}
             onChange={themeChanger}
           />
         </Navbar.Collapse>
