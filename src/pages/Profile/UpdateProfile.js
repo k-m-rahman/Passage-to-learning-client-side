@@ -2,7 +2,7 @@ import { Button, Label, TextInput } from "flowbite-react";
 import React, { useContext, useRef } from "react";
 import { AuthContext } from "../../contexts/AuthProvider";
 import swal from "sweetalert";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const UpdateProfile = () => {
   const { user, updateUserProfile } = useContext(AuthContext);
@@ -17,6 +17,7 @@ const UpdateProfile = () => {
     const name = displayNameRef.current.value;
     const photo = photoURLRef.current.value;
     handleProfileUpdate(name, photo);
+
     event.target.reset();
     navigate("/");
   };

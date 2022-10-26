@@ -24,8 +24,8 @@ const NavBar = () => {
   };
 
   return (
-    <div className="shadow-md sticky top-0 z-10">
-      <Navbar fluid={true} rounded={true}>
+    <div className="shadow-md sticky top-0 z-10 h-16">
+      <Navbar className="mt-3" fluid={true} rounded={true}>
         <NavLink className="flex " to="/">
           <img
             src={logo}
