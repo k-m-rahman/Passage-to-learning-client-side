@@ -53,6 +53,8 @@ Example -> https://passage-to-learning-server.vercel.app/courses/63349086a02270e
 <br>
 5.Alert -> [Sweet Alert](https://sweetalert.js.org/)
 <br>
+6.PDF -> [React To Pdf](https://www.npmjs.com/package/react-to-pdf)
+<br>
 
 <br>
 

@@ -7,7 +7,7 @@ import swal from "sweetalert";
 
 const Register = () => {
   const [error, setError] = useState("");
-  const { signUp, updateUserProfile, verifyEmail, setLoading } =
+  const { signUp, updateUserProfile, verifyEmail, setLoading, setUser } =
     useContext(AuthContext);
 
   const navigate = useNavigate();
@@ -37,6 +37,7 @@ const Register = () => {
     signUp(email, password)
       .then((result) => {
         const user = result.user;
+        setUser(user);
         form.reset();
         setError("");
         handleEmailVerification();
