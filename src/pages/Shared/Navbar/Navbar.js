@@ -1,4 +1,10 @@
-import { Avatar, Dropdown, Navbar, ToggleSwitch } from "flowbite-react";
+import {
+  Avatar,
+  Dropdown,
+  Navbar,
+  ToggleSwitch,
+  Tooltip,
+} from "flowbite-react";
 import React, { useContext, useState } from "react";
 import { Link, NavLink, ScrollRestoration } from "react-router-dom";
 import logo from "../../../assets/logo.png";
@@ -25,7 +31,7 @@ const NavBar = () => {
 
   return (
     <div className="shadow-md sticky top-0 z-10 h-16">
-      <Navbar className="mt-3" fluid={true} rounded={true}>
+      <Navbar className="mt-3 " fluid={true} rounded={true}>
         <NavLink className="flex " to="/">
           <img
             src={logo}
@@ -76,12 +82,14 @@ const NavBar = () => {
                 arrowIcon={false}
                 inline={true}
                 label={
-                  <Avatar
-                    className="border border-gray-300  rounded-full sm:hover:scale-110"
-                    alt="User "
-                    img={user?.photoURL}
-                    rounded={true}
-                  />
+                  <Tooltip content={`${user?.displayName}`}>
+                    <Avatar
+                      className="border border-gray-300  rounded-full sm:hover:scale-110"
+                      alt="User "
+                      img={user?.photoURL}
+                      rounded={true}
+                    />
+                  </Tooltip>
                 }
               >
                 <Dropdown.Header>
