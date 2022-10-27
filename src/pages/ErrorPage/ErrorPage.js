@@ -13,26 +13,31 @@ const ErrorPage = () => {
   return (
     <div>
       <NavBar></NavBar>
-      <h2 className="text-6xl mt-5 oops font-bold text- w-fit  mx-auto p-2 rounded">
-        Oops! An Error Ocurred...
-      </h2>
-      <div className="my-7 w-20 mx-auto">
-        <Lottie animationData={errorAnimation} loop={true}></Lottie>
-      </div>
-      {error && (
-        <div className="my-5 flex flex-col gap-3">
-          <span className="text-7xl font-bold text-slate-700">
-            {error?.status}
-          </span>
-          <span className="text-3xl font-semibold">{error?.statusText}</span>
+      <div className="py-10 dark:bg-slate-400">
+        <h2 className="text-6xl mt-5 oops font-bold text- w-fit  mx-auto p-2 rounded">
+          Oops! An Error Ocurred...
+        </h2>
+        <div className="my-7 w-20 mx-auto">
+          <Lottie animationData={errorAnimation} loop={true}></Lottie>
         </div>
-      )}
-      <div>
-        <Link to={`/`}>
-          <Button className="mx-auto " gradientMonochrome="cyan">
-            Go to homepage
-          </Button>
-        </Link>
+        {error && (
+          <div className="my-5 flex flex-col gap-3">
+            <span className="text-7xl font-bold text-slate-700 dark:text-slate-800">
+              {error?.status}
+            </span>
+            <span className="text-3xl font-semibold">{error?.statusText}</span>
+          </div>
+        )}
+        <div>
+          <Link to={`/`}>
+            <Button
+              className="mx-auto border-cyan-700 border"
+              gradientMonochrome="cyan"
+            >
+              Go to homepage
+            </Button>
+          </Link>
+        </div>
       </div>
       <CommonFooter></CommonFooter>
     </div>
