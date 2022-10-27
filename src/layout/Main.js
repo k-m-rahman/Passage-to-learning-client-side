@@ -7,8 +7,12 @@ const Main = () => {
   return (
     <div>
       <NavBar></NavBar>
-      <Outlet></Outlet>
-      <CommonFooter></CommonFooter>
+      <div className="dark:bg-slate-600">
+        <Outlet></Outlet>
+      </div>
+      <div className="dark:bg-slate-600">
+        <CommonFooter></CommonFooter>
+      </div>
     </div>
   );
 };

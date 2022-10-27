@@ -10,13 +10,15 @@ import { Link, NavLink, ScrollRestoration } from "react-router-dom";
 import logo from "../../../assets/logo.png";
 import { AuthContext } from "../../../contexts/AuthProvider";
 import toast from "react-hot-toast";
+import { ThemeContext } from "../../../contexts/ThemeProvider";
 
 const NavBar = () => {
   const { user, logout } = useContext(AuthContext);
-  const [theme, setTheme] = useState(false);
+  const { darkMode, setDarkMode } = useContext(ThemeContext);
 
+  // const [darkMode, setDarkMode] = useState(false);
   const themeChanger = () => {
-    setTheme(!theme);
+    setDarkMode(!darkMode);
   };
 
   const handleLogout = () => {
@@ -30,8 +32,8 @@ const NavBar = () => {
   };
 
   return (
-    <div className="shadow-md sticky top-0 z-10 h-16">
-      <Navbar className="mt-3 " fluid={true} rounded={true}>
+    <div className="shadow-md sticky top-0 z-10 h-16 dark:bg-slate-800">
+      <Navbar fluid={true} rounded={true}>
         <NavLink className="flex " to="/">
           <img
             src={logo}
@@ -129,8 +131,8 @@ const NavBar = () => {
 
           <ToggleSwitch
             className="mx-auto mt-5 md:mt-2 "
-            checked={theme}
-            label={!theme ? "Dark" : "Light"}
+            checked={darkMode}
+            label={!darkMode ? "Dark" : "Light"}
             onChange={themeChanger}
           />
         </Navbar.Collapse>

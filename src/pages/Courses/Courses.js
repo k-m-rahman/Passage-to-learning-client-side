@@ -7,10 +7,10 @@ const Courses = () => {
 
   return (
     <div>
-      <h2 className="text-3xl font-semibold my-5 underline sm:w-max mx-auto">
+      <h2 className="text-4xl font-semibold py-5 italic dark:text-slate-100 underline sm:w-max mx-auto">
         We have total {courses.length} courses
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-8 my-10 gap-y-8 md:gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-8 py-10 gap-y-8 md:gap-5">
         {/* courses name list */}
         <div className="md:col-span-2 border border-gray-200  mx-auto w-10/12 shadow-xl rounded">
           <h2 className="text-xl font-semibold uppercase my-3 italic underline">

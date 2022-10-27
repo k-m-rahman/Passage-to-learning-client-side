@@ -3,7 +3,7 @@ import React from "react";
 
 const Slider = () => {
   return (
-    <div className="h-56  sm:h-96  rounded-none mx-2 lg:mx-4 mt-4">
+    <div className="h-56  sm:h-96  rounded-none mx-2 lg:mx-4 pt-4">
       <Carousel slideInterval={5000}>
         <div className="h-full bg-no-repeat text-white bg-cover bg-[url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=820&q=80')] lg:bg-[url('https://i.ibb.co/p45Dxjv/ales-nesetril-Im7l-Zjxe-Lhg-unsplash.jpg')] flex justify-center items-center">
           <h2

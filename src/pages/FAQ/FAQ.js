@@ -3,12 +3,14 @@ import React from "react";
 
 const FAQ = () => {
   return (
-    <div className="container mx-auto my-10 w-4/5">
+    <div className="container mx-auto py-10 w-4/5 ">
       <div>
-        <h3 className="text-4xl font-semibold my-8 underline italic">FAQ</h3>
+        <h3 className="text-4xl font-semibold my-8 underline italic dark:text-slate-200">
+          FAQ
+        </h3>
       </div>
       <Accordion
-        className="border-2 border-gray-400 shadow-lg mt-16"
+        className="border-2 border-gray-400 shadow-lg mt-16 dark:bg-slate-700"
         alwaysOpen={true}
       >
         <Accordion.Panel>

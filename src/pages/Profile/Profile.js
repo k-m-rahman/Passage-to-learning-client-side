@@ -7,10 +7,10 @@ const Profile = () => {
   const { user } = useContext(AuthContext);
   return (
     <div>
-      <h2 className="text-slate-700 text-4xl font-bold mt-5 underline ">
+      <h2 className="text-slate-700 text-4xl dark:text-slate-200 font-bold pt-5 underline ">
         Your Profile
       </h2>
-      <div className=" flex justify-center my-10">
+      <div className=" flex justify-center py-10">
         <div className="w-[95%] sm:w-auto">
           <div className="flex flex-col sm:flex-row justify-center items-center gap-5 bg-sky-50 border border-gray-300 p-5 rounded-xl shadow-lg">
             <div className=" w-full flex justify-center">

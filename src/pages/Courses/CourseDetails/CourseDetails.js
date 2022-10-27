@@ -20,7 +20,7 @@ const CourseDetails = () => {
     };
 
     return (
-      <div className="w-10/12 mx-auto my-10" data-aos="zoom-in">
+      <div className="w-10/12 mx-auto py-10" data-aos="zoom-in">
         <Card>
           <img
             className="h-[200px] md:h-[300px] border border-gray-300 rounded-lg"
@@ -53,7 +53,7 @@ const CourseDetails = () => {
               </p>
             </div>
 
-            <div className="text-left mt-5 w-fit mx-auto ">
+            <div className="text-left dark:text-slate-300 mt-5 w-fit mx-auto ">
               <p className="text-xl text-center font-semibold mb-2">
                 You will learn:
               </p>
@@ -81,7 +81,7 @@ const CourseDetails = () => {
   }
 
   return (
-    <h2 className="text-5xl text-slate-600 font-bold mt-10">No Course Found</h2>
+    <h2 className="text-5xl text-slate-600 font-bold pt-10">No Course Found</h2>
   );
 };
 
