@@ -1,14 +1,19 @@
 import { Button, Card } from "flowbite-react";
-import React, { useEffect } from "react";
+import React, { createRef, useEffect } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { FaFileDownload, FaArrowRight } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Pdf from "react-to-pdf";
 
 const CourseDetails = () => {
   const course = useLoaderData();
   const { description, name, lessons, picture, _id } = course;
-  console.log(course);
+
+  const ref = createRef();
+  const options = {
+    orientation: "landscape",
+  };
 
   useEffect(() => {
     AOS.init();
@@ -23,29 +28,43 @@ const CourseDetails = () => {
         />
         <h5 className="text-3xl flex justify-center items-center gap-5 font-bold tracking-tight underline text-gray-900 dark:text-white">
           <span>{name}</span>
-          <span className="text-lg dark:text-white">
-            <FaFileDownload></FaFileDownload>
-          </span>
+          <Pdf
+            targetRef={ref}
+            filename={`${name}.pdf`}
+            options={options}
+            x={0.5}
+            y={0.5}
+            scale={1.2}
+          >
+            {({ toPdf }) => (
+              <button className="no-underline" onClick={toPdf}>
+                <FaFileDownload></FaFileDownload>
+              </button>
+            )}
+          </Pdf>
         </h5>
 
-        <div className="flex flex-col font-semibold dark:text-gray-400">
-          <span className="text-xl">Description: </span>
-          <p className="font-normal text-gray-700 dark:text-gray-400">
-            {description}
-          </p>
-        </div>
+        <div className="px-10 py-4 " ref={ref}>
+          <div className="flex flex-col font-semibold dark:text-gray-400">
+            <span className="text-xl">Description: </span>
+            <p className="font-normal text-gray-700 dark:text-gray-400">
+              {description}
+            </p>
+          </div>
 
-        <div className="text-left w-fit mx-auto ">
-          <p className="text-xl text-center font-semibold mb-2">
-            You will learn:
-          </p>
-          {lessons.map((lesson, idx) => (
-            <li className="italic" key={idx}>
-              {lesson}
-            </li>
-          ))}
+          <div className="text-left mt-5 w-fit mx-auto ">
+            <p className="text-xl text-center font-semibold mb-2">
+              You will learn:
+            </p>
+            {lessons.map((lesson, idx) => (
+              <li className="italic" key={idx}>
+                {lesson}
+              </li>
+            ))}
+          </div>
         </div>
       </Card>
+
       <div className="mt-4 text-center">
         <Link to={`/checkout/${_id}`}>
           <Button className="mx-auto" gradientMonochrome="purple">
