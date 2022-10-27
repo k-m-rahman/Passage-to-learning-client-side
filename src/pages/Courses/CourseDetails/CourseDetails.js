@@ -83,7 +83,9 @@ const CourseDetails = () => {
   }
 
   return (
-    <h2 className="text-5xl text-slate-600 font-bold pt-10">No Course Found</h2>
+    <h2 className="text-5xl text-slate-600 dark:text-white  font-bold py-44">
+      No Course Found
+    </h2>
   );
 };
 
