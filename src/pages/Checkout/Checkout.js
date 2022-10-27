@@ -34,14 +34,16 @@ const Checkout = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 border-2 border-slate-300 md:w-3/4 mx-3 md:mx-auto my-10 shadow-xl rounded-lg p-5 items-center">
       <div>
-        <div className="max-w-sm mb-5">
+        <div className="max-w-sm  mb-5 mx-auto">
           <Card imgSrc={course.picture}>
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
               {course.name}
             </h5>
-            <p className="font-normal text-gray-700 dark:text-gray-400">
-              <span className="font-semibold">Price:</span>{" "}
-              <span>{course.price}</span>
+            <p className="font-bold text-gray-700 dark:text-gray-400">
+              <span>Price:</span>{" "}
+              <span className="text-amber-500 dark:text-gray-400">
+                {course.price}
+              </span>
             </p>
           </Card>
         </div>

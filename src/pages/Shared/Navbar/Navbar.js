@@ -82,7 +82,13 @@ const NavBar = () => {
                 arrowIcon={false}
                 inline={true}
                 label={
-                  <Tooltip content={`${user?.displayName}`}>
+                  <Tooltip
+                    content={
+                      user?.displayName
+                        ? `${user?.displayName}`
+                        : "Name not available"
+                    }
+                  >
                     <Avatar
                       className="border border-gray-300  rounded-full sm:hover:scale-110"
                       alt="User "

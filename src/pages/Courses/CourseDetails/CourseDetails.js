@@ -22,7 +22,7 @@ const CourseDetails = () => {
     <div className="w-10/12 mx-auto my-10" data-aos="zoom-in">
       <Card>
         <img
-          className="h-[300px] border border-gray-300 rounded-lg"
+          className="h-[200px] md:h-[300px] border border-gray-300 rounded-lg"
           src={picture}
           alt=""
         />

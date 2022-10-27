@@ -13,10 +13,10 @@ const CourseCard = ({ course }) => {
   }, []);
 
   return (
-    <div className="max-w-sm mx-auto" data-aos="flip-left">
-      <Card>
+    <div className="max-w-sm mx-auto " data-aos="flip-left">
+      <Card className="bg-green-50 border-green-100">
         <img
-          className="rounded-lg h-[180px] border border-gray-300"
+          className="rounded-lg h-[180px] lg:h-[150px] border border-gray-300"
           src={picture}
           alt=""
         />
@@ -30,6 +30,10 @@ const CourseCard = ({ course }) => {
               : description}
           </p>
         </div>
+        <span className="text-xl font-bold text-gray-900 dark:text-white">
+          <span>Price:</span>{" "}
+          <span className="text-amber-500">{` ${course.price}`}</span>
+        </span>
         <Link to={`/courses/${_id}`}>
           <button className="w-full bg-emerald-400 hover:bg-emerald-500 font-semibold  py-2 rounded-lg mx-auto flex gap-2 justify-center items-center mt-1">
             <span>See Details</span>

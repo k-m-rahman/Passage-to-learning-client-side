@@ -145,6 +145,8 @@ const Login = () => {
             <Link
               to="/register"
               className="text-blue-600 hover:underline dark:text-blue-500"
+              state={{ from: from }}
+              replace
             >
               Register
             </Link>
