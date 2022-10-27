@@ -22,9 +22,9 @@ const ErrorPage = () => {
       {error && (
         <div className="my-5 flex flex-col gap-3">
           <span className="text-7xl font-bold text-slate-700">
-            {error.status}
+            {error?.status}
           </span>
-          <span className="text-3xl font-semibold">{error.statusText}</span>
+          <span className="text-3xl font-semibold">{error?.statusText}</span>
         </div>
       )}
       <div>
