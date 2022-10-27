@@ -67,14 +67,16 @@ const CourseDetails = () => {
         </Card>
 
         <div className="mt-4 text-center">
-          <Link to={`/checkout/${_id}`}>
-            <Button className="mx-auto" gradientMonochrome="purple">
-              <span>Get Premium Access</span>{" "}
-              <span className="ml-3">
-                <FaArrowRight></FaArrowRight>
-              </span>
-            </Button>
-          </Link>
+          <Button className="mx-auto" gradientMonochrome="purple">
+            <Link to={`/checkout/${_id}`}>
+              <div className="flex gap-1 items-center justify-center">
+                <span>Get Premium Access</span>{" "}
+                <span className="ml-3">
+                  <FaArrowRight></FaArrowRight>
+                </span>
+              </div>
+            </Link>
+          </Button>
         </div>
       </div>
     );
