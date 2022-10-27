@@ -147,7 +147,7 @@ const Login = () => {
               Don't have any account?{" "}
               <Link
                 to="/register"
-                className="text-blue-600 hover:underline dark:text-blue-500"
+                className="text-blue-600 hover:underline dark:text-blue-300"
                 state={{ from: from }}
                 replace
               >
@@ -162,7 +162,7 @@ const Login = () => {
               Forgot Password?
               <span
                 onClick={handleResetPassword}
-                className="text-blue-600 hover:underline ml-2 dark:text-blue-500"
+                className="text-blue-600 hover:underline ml-2 dark:text-blue-300"
               >
                 Reset Password
               </span>

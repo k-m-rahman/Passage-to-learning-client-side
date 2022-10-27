@@ -101,7 +101,7 @@ const Checkout = () => {
               <Label htmlFor="agree">Agree to </Label>
               <span
                 onClick={() => setShowModal(true)}
-                className="text-blue-700 hover:underline text-sm cursor-pointer"
+                className="text-blue-700 dark:text-blue-300 hover:underline text-sm cursor-pointer"
               >
                 Terms and Conditions
               </span>
