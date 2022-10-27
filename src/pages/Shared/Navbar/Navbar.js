@@ -11,6 +11,7 @@ import logo from "../../../assets/logo.png";
 import { AuthContext } from "../../../contexts/AuthProvider";
 import toast from "react-hot-toast";
 import { ThemeContext } from "../../../contexts/ThemeProvider";
+import { addDataToDb } from "../../../utils/fakeDb";
 
 const NavBar = () => {
   const { user, logout } = useContext(AuthContext);
@@ -19,6 +20,8 @@ const NavBar = () => {
   // const [darkMode, setDarkMode] = useState(false);
   const themeChanger = () => {
     setDarkMode(!darkMode);
+
+    addDataToDb(!darkMode);
   };
 
   const handleLogout = () => {
